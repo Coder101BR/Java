@@ -18,7 +18,7 @@ public class PrimeiraClasse
     public PrimeiraClasse()
     {
         // inicializa variáveis de instância
-        x = 0;
+        //x = 0;
     }
 
     /**
@@ -27,11 +27,20 @@ public class PrimeiraClasse
      * @param  y   exemplo de um parâmetro de método
      * @return     a soma de x com y 
      */
-    public int sampleMethod(int y)
+    public static String[][] novoKanaArray(int Escolhido, String[][] KanaArray)
     {
-       
-        // ponha seu código aqui
-        return x + y;
+        String[][] NovoKanaArray = new String [KanaArray.length-1][KanaArray.length-1];
+        int i = 0;
+        int j = 0;
+        
+        for(i = 0; i < KanaArray.length; i++){
+            if(i != Escolhido){
+             NovoKanaArray[j][1] = KanaArray[i][1];
+             j++;
+            }   
+        }
+        
+        return NovoKanaArray;
     }
     
       public static void main(String[] args)
@@ -48,7 +57,7 @@ public class PrimeiraClasse
             { "a", "お"}
         };
       
-        String[][] NovoKanaArray = new String [KanaArray.length-1][KanaArray.length-1];
+        
         
      //System.out.println("Hello World!");
      /*
@@ -69,7 +78,7 @@ public class PrimeiraClasse
         int Escolhido = RandomKanaIndex;
        // int Escolhido = 1;
        // NovoKanaArray = KanaArray;
-      System.out.println(Escolhido); 
+      
       /*
       for(i = 0; i < KanaArray.length; i++) {
          System.out.println("KanaArray:[" +i + "]:" + NovoKanaArray[i][1]);
@@ -80,58 +89,32 @@ public class PrimeiraClasse
          System.out.println("KanaArray:[" +i + "]:" + KanaArray[i][1]);
      }
      
+     System.out.println(Escolhido); 
+     String[][] NovoKanaArray = novoKanaArray(Escolhido, KanaArray);
+     Escolhido = rand.nextInt(NovoKanaArray.length);
      
-     
-     for(i = 0; i < KanaArray.length; i++){
-         if(i != Escolhido){
-             NovoKanaArray[j][1] = KanaArray[i][1];
-             j++;
-         }   
-     }
-         
      for(i = 0; i < NovoKanaArray.length; i++) {
-         System.out.println("NovoKanaArray:[" +i + "]:" + NovoKanaArray[i][1]);
-     }
-   
-       ///////////////////////////////////
-       String[][] NovoNovoKanaArray = new String [NovoKanaArray.length-1][NovoKanaArray.length-1];
-       //Escolhido = 0;
-       Escolhido = rand.nextInt(NovoNovoKanaArray.length);
-       System.out.println(Escolhido); 
-       j = 0;
-      // System.out.println(NovoKanaArray.length);
-       
-       
-     for(i = 0; i < NovoKanaArray.length; i++){
-         if(i != Escolhido){
-             NovoNovoKanaArray[j][1] = NovoKanaArray[i][1];
-             j++;
-         }   
-     }
-         
-     for(i = 0; i < NovoNovoKanaArray.length; i++) {
-         System.out.println("NovoNovoKanaArray:[" +i + "]:" + NovoNovoKanaArray[i][1]);
+         System.out.println("1 - KanaArray:[" +i + "]:" + NovoKanaArray[i][1]);
      }
      
-        ///////////////////////////////////
-       String[][] NovoNovoNovoKanaArray = new String [NovoNovoKanaArray.length-1][NovoNovoKanaArray.length-1];
-       //Escolhido = 1;
-       Escolhido = rand.nextInt(NovoNovoNovoKanaArray.length);
-       System.out.println(Escolhido); 
-       j = 0;
-      // System.out.println(NovoKanaArray.length);
-       
-       
-     for(i = 0; i < NovoNovoKanaArray.length; i++){
-         if(i != Escolhido){
-             NovoNovoNovoKanaArray[j][1] = NovoNovoKanaArray[i][1];
-             j++;
-         }   
+     System.out.println(Escolhido); 
+     NovoKanaArray = novoKanaArray(Escolhido, NovoKanaArray);
+     Escolhido = rand.nextInt(NovoKanaArray.length);
+     
+     for(i = 0; i < NovoKanaArray.length; i++) {
+         System.out.println("2 - KanaArray:[" +i + "]:" + NovoKanaArray[i][1]);
      }
-         
-     for(i = 0; i < NovoNovoNovoKanaArray.length; i++) {
-         System.out.println("NovoNovoNovoKanaArray:[" +i + "]:" + NovoNovoNovoKanaArray[i][1]);
+     
+     System.out.println(Escolhido); 
+     NovoKanaArray = novoKanaArray(Escolhido, NovoKanaArray);
+     Escolhido = rand.nextInt(NovoKanaArray.length);
+     
+     for(i = 0; i < NovoKanaArray.length; i++) {
+         System.out.println("3 - KanaArray:[" +i + "]:" + NovoKanaArray[i][1]);
      }
+     
+
+
         
         
    }
